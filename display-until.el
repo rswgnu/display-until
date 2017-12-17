@@ -6,7 +6,7 @@
 ;; Maintainer: emacs-devel@gnu.org
 ;; Keywords: internal
 ;; Package: emacs
-;; Version: 1.0
+;; Version: 1.1
 ;; Orig-Date: 16-Dec-17
 ;; Last-Mod:  17-Dec-17
 
@@ -79,7 +79,7 @@
   (if (stringp name)
       (catch 'done
 	(mapc (lambda (frame)
-		(when (string-equal name (get-frame-name frame))
+		(when (equal name (frame-parameter frame 'name))
 		  (throw 'done frame)))
 	      (frame-list))
 	nil)
@@ -88,8 +88,8 @@
 (defmacro display-until-condition-or-timeout (condition timeout)
   "Wait for the either CONDITION to become non-nil or for TIMEOUT seconds to expire.
 CONDITION must be a boolean predicate form.  TIMEOUT must be > zero."
-  `(let ((decrement 0.05))
-     (setq timeout ,timeout)
+  `(let ((decrement 0.05)
+	 (timeout ,timeout))
      (while (not (or ,condition (<= timeout 0)))
        (sleep-for decrement)
        (setq timeout (- timeout decrement)))))
