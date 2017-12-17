@@ -1,5 +1,4 @@
-# display-until
-Display a window or frame topmost in the frame stack until a condition or timeout occurs
+# display-until - Display a window or frame topmost in the frame stack until a condition or timeout occurs.
 
 (RSW would like this code to be added to core Emacs if it is
  acceptable.  Someone else who adds to Emacs regularly would have
