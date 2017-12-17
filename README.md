@@ -13,9 +13,11 @@ sample usage expressions.
 
 ```
 This library includes the following:
-  Variable:
+  Variables:
     display-until-delay - time in seconds to display a temporary frame or
       window
+    display-until-frame-parameters - alist of frame parameters to apply to
+      any newly created temporarily displayed frame
       
   Display Functions:
     display-window-until - given a window and optional buffer, display the
