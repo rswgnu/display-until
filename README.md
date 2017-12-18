@@ -3,7 +3,7 @@
 (RSW would like this code to be added to core Emacs if it is
  acceptable.  Someone else who adds to Emacs regularly would have
  to add the NEWS entry, Elisp Manual entry and commit the code.
- In that case, the utilty macros and function names could be generalized).
+ In that case, the utility macros and function names could be generalized).
 
 This library temporarily displays an existing or new frame topmost in
 the frame stack.  Then it restores the prior topmost frame as well
